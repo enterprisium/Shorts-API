@@ -1,5 +1,5 @@
 [app]
-    pexels_api_keys = ["7KygQ5mPe95mQGiO0Fds3taAlOZSuwdwsJQ12SeSaGJo6GeVaP70shik","xj8BidZ2nbHH50inHPbH42Yj9a7QFSWm9St7SwBw0ioXp3qowwfkhaWf"]
+    pexels_api_keys = ["7KygQ5mPe95mQGiO0FdsGJo6GeVaP70shik","xj8BidZ2nbHH50iSwBw0ioXp3qowwfkhaWf"]
     llm_provider="g4f"
     g4f_model_name = "gpt-3.5-turbo-16k-0613"
     subtitle_provider = "edge"
