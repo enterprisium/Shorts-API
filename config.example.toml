@@ -1,0 +1,93 @@
+[app]
+    # Pexels API Key
+    # Register at https://www.pexels.com/api/ to get your API key.
+    # You can use multiple keys to avoid rate limits.
+    # For example: pexels_api_keys = ["123456789","abcdefghi"]
+    # 特别注意格式，Key 用英文双引号括起来，多个Key用逗号隔开
+    pexels_api_keys = []
+
+    # 如果你没有 OPENAI API Key，可以使用 g4f 代替，或者使用国内的 Moonshot API
+    llm_provider="openai" # "openai" or "moonshot" or "oneapi" or "g4f"
+
+    # OpenAI API Key
+    # Visit https://openai.com/api/ for details on obtaining an API key.
+    openai_api_key = ""
+    openai_base_url = ""
+    openai_model_name = "gpt-4-turbo-preview"
+
+    # Moonshot API Key
+    # Visit https://platform.moonshot.cn/console/api-keys to get your API key.
+    moonshot_api_key=""
+    moonshot_base_url = "https://api.moonshot.cn/v1"
+    moonshot_model_name = "moonshot-v1-8k"
+
+    # OneAPI API Key
+    # Visit https://github.com/songquanpeng/one-api to get your API key
+    oneapi_api_key=""
+    oneapi_base_url=""
+    oneapi_model_name=""
+
+    # G4F
+    # Visit https://github.com/xtekky/gpt4free to get more details
+    # Supported model list: https://github.com/xtekky/gpt4free/blob/main/g4f/models.py
+    g4f_model_name = "gpt-3.5-turbo-16k-0613"
+
+    # Subtitle Provider, "edge" or "whisper"
+    # If empty, the subtitle will not be generated
+    subtitle_provider = "edge"
+
+    #
+    # ImageMagick
+    #
+    # Once you have installed it, ImageMagick will be automatically detected, except on Windows!
+    # On Windows, for example "C:\Program Files (x86)\ImageMagick-7.1.1-Q16-HDRI\magick.exe"
+    # Download from https://imagemagick.org/archive/binaries/ImageMagick-7.1.1-29-Q16-x64-static.exe
+
+    # imagemagick_path = "C:\\Program Files (x86)\\ImageMagick-7.1.1-Q16\\magick.exe"
+
+
+    #
+    # FFMPEG
+    #
+    # 通常情况下，ffmpeg 会被自动下载，并且会被自动检测到。
+    # 但是如果你的环境有问题，无法自动下载，可能会遇到如下错误：
+    #   RuntimeError: No ffmpeg exe could be found.
+    #   Install ffmpeg on your system, or set the IMAGEIO_FFMPEG_EXE environment variable.
+    # 此时你可以手动下载 ffmpeg 并设置 ffmpeg_path，下载地址：https://www.gyan.dev/ffmpeg/builds/
+
+    # Under normal circumstances, ffmpeg is downloaded automatically and detected automatically.
+    # However, if there is an issue with your environment that prevents automatic downloading, you might encounter the following error:
+    #   RuntimeError: No ffmpeg exe could be found.
+    #   Install ffmpeg on your system, or set the IMAGEIO_FFMPEG_EXE environment variable.
+    # In such cases, you can manually download ffmpeg and set the ffmpeg_path, download link: https://www.gyan.dev/ffmpeg/builds/
+
+    # ffmpeg_path = "C:\\Users\\harry\\Downloads\\ffmpeg.exe"
+    #########################################################################################
+
+[whisper]
+    # Only effective when subtitle_provider is "whisper"
+
+    # Run on GPU with FP16
+    # model = WhisperModel(model_size, device="cuda", compute_type="float16")
+
+    # Run on GPU with INT8
+    # model = WhisperModel(model_size, device="cuda", compute_type="int8_float16")
+
+    # Run on CPU with INT8
+    # model = WhisperModel(model_size, device="cpu", compute_type="int8")
+
+    # recommended model_size: "large-v3"
+    model_size="large-v3"
+    # if you want to use GPU, set device="cuda"
+    device="CPU"
+    compute_type="int8"
+
+[pexels]
+    video_concat_mode="sequential" # "random" or "sequential"
+    [pexels.proxies]
+        ### Use a proxy to access the Pexels API
+        ### Format: "http://<username>:<password>@<proxy>:<port>"
+        ### Example: "http://user:pass@proxy:1234"
+        ### Doc: https://requests.readthedocs.io/en/latest/user/advanced/#proxies
+        # http = "http://10.10.1.10:3128"
+        # https = "http://10.10.1.10:1080"

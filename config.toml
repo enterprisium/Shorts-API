@@ -1,0 +1,13 @@
+[app]
+    pexels_api_keys = ["7KygQ5mPe95mQGiO0Fds3taAlOZSuwdwsJQ12SeSaGJo6GeVaP70shik","xj8BidZ2nbHH50inHPbH42Yj9a7QFSWm9St7SwBw0ioXp3qowwfkhaWf"]
+    llm_provider="g4f"
+    g4f_model_name = "gpt-3.5-turbo-16k-0613"
+    subtitle_provider = "edge"
+    imagemagick_path = "C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI\\magick.exe"
+[whisper]
+    #model_size="large-v3"
+    device="CPU"
+    compute_type="int8"
+[pexels]
+    video_concat_mode="sequential"
+    [pexels.proxies]
